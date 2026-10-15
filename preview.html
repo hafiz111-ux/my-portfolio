@@ -1,0 +1,1276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hafiz Muhammad Abdullah — Software Engineer, Frontend Developer and SQA Professional.">
+<title>Hafiz Muhammad Abdullah | Portfolio</title>
+
+<style>
+:root {
+  --bg: #FAFAF7;
+  --white: #FFFFFF;
+  --soft: #F3F2ED;
+  --ink: #171717;
+  --muted: #60636B;
+  --gold: #B08D45;
+  --gold-dark: #806323;
+  --gold-light: #E9D8AD;
+  --border: #E7E3D8;
+  --shadow: 0 18px 45px rgba(31,29,20,.08);
+  --radius: 22px;
+  --max: 1160px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+img { max-width: 100%; }
+section { scroll-margin-top: 80px; }
+
+.container {
+  width: min(var(--max), calc(100% - 40px));
+  margin: auto;
+}
+
+.section { padding: 90px 0; }
+.soft { background: var(--soft); }
+
+h1, h2, h3 {
+  line-height: 1.2;
+  letter-spacing: -.6px;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 12px 0; }
+h3 { font-size: 1.25rem; margin-bottom: 12px; }
+
+p { color: var(--muted); margin-bottom: 14px; }
+.accent { color: var(--gold-dark); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--gold-dark);
+  font-size: .75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-heading { max-width: 690px; margin-bottom: 38px; }
+.section-heading p { margin-top: 12px; }
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(31,29,20,.035);
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 21px;
+  border: 1px solid var(--gold);
+  border-radius: 50px;
+  font-weight: 750;
+  font-size: .9rem;
+  transition: .25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #b08d4525;
+}
+
+.btn-primary { background: var(--gold); color: white; }
+.btn-primary:hover { background: var(--gold-dark); }
+.btn-light { background: white; }
+.text-link { color: var(--gold-dark); font-weight: 750; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, summary:focus-visible, label:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fafaf7ed;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.logo span { color: var(--gold-dark); }
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-links a {
+  font-size: .83rem;
+  font-weight: 700;
+  color: #45464a;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--gold-dark); }
+
+.nav-links .nav-cta {
+  border: 1px solid var(--gold-light);
+  border-radius: 30px;
+  padding: 8px 15px;
+  color: var(--gold-dark);
+}
+
+#menu-toggle { display: none; }
+
+.menu-label {
+  display: none;
+  border: 1px solid var(--border);
+  background: white;
+  padding: 8px 13px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 90px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -230px;
+  top: -230px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #e9d8ad70, transparent 70%);
+}
+
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hero-copy { animation: appear .8s ease both; }
+
+.hero h1 { margin: 18px 0; }
+
+.role {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero-copy > p { font-size: 1.03rem; max-width: 620px; }
+
+.location { color: var(--muted); font-size: .9rem; }
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0 20px;
+}
+
+.socials { display: flex; gap: 20px; flex-wrap: wrap; }
+.socials a { font-size: .9rem; font-weight: 750; }
+.socials a:hover { color: var(--gold-dark); }
+
+.hero-visual {
+  min-height: 440px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  animation: appear 1s ease both;
+}
+
+.portrait-frame {
+  width: min(330px, 80%);
+  aspect-ratio: 4 / 4.7;
+  padding: 12px;
+  border-radius: 180px 180px 35px 35px;
+  border: 1px solid var(--gold-light);
+  background: linear-gradient(145deg, white, #f1e8d4);
+  box-shadow: var(--shadow);
+}
+
+.portrait-placeholder {
+  height: 100%;
+  border-radius: 170px 170px 25px 25px;
+  border: 1px dashed #cbb987;
+  background: linear-gradient(160deg, #f5f0e5, white 55%, #e9dfc9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  box-shadow: 0 12px 28px #80632330;
+}
+
+.portrait-placeholder small { color: var(--muted); margin-top: 6px; }
+
+.float-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  padding: 12px 15px;
+  font-size: .8rem;
+  font-weight: 800;
+  animation: float 5s ease-in-out infinite;
+}
+
+.float-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #f6efdf;
+  color: var(--gold-dark);
+}
+
+.float-one { left: 0; top: 55px; }
+.float-two { right: -4px; top: 175px; animation-delay: -1.5s; }
+.float-three { left: 8px; bottom: 35px; animation-delay: -3s; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  max-width: 580px;
+  margin-top: 32px;
+}
+
+.stat {
+  background: #ffffffb8;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 13px;
+}
+
+.stat strong { display: block; font-size: .9rem; }
+.stat span { font-size: .73rem; color: var(--muted); }
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+}
+
+.about-card, .profile-card { padding: 30px; }
+.about-card p:last-child { margin-bottom: 0; }
+
+.profile-card { background: #fffdf8; }
+
+.profile-list { margin-top: 12px; }
+
+.profile-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-row:last-child { border-bottom: 0; }
+.profile-row dt { color: var(--muted); font-size: .83rem; }
+.profile-row dd { font-weight: 750; font-size: .86rem; margin: 0; }
+
+.pill {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background: #f5eedc;
+  color: var(--gold-dark);
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+/* SKILLS */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.skill-card {
+  padding: 26px;
+  transition: .25s ease;
+}
+
+.skill-card:hover, .project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-light);
+  box-shadow: var(--shadow);
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #f7f0df;
+  color: var(--gold-dark);
+  border-radius: 14px;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+
+.tag {
+  border: 1px solid var(--border);
+  background: #fffdfa;
+  border-radius: 30px;
+  padding: 5px 10px;
+  color: #55565b;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.note { font-size: .8rem; }
+
+/* PROJECTS */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.project-card { overflow: hidden; transition: .25s ease; }
+
+.project-preview {
+  height: 185px;
+  padding: 17px;
+  background: linear-gradient(135deg, #f3eddf, #fff);
+  border-bottom: 1px solid var(--border);
+}
+
+.browser-bar {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 9px;
+  border: 1px solid #e7e0d0;
+  background: #ffffffd9;
+  border-radius: 8px 8px 0 0;
+}
+
+.browser-bar i {
+  width: 6px;
+  height: 6px;
+  background: #d4c7a7;
+  border-radius: 50%;
+}
+
+.preview-content {
+  height: 126px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #ffffffdf;
+  border: 1px solid #e7e0d0;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  color: var(--gold-dark);
+  font-weight: 850;
+}
+
+.preview-content span { display: block; font-size: 2rem; }
+
+.project-content { padding: 24px; }
+
+.category {
+  color: var(--gold-dark);
+  font-size: .68rem;
+  text-transform: uppercase;
+  font-weight: 850;
+  letter-spacing: 1.3px;
+}
+
+.project-content h3 { margin-top: 10px; }
+.project-content p { font-size: .9rem; }
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: .82rem;
+  margin-top: 17px;
+  font-weight: 750;
+}
+
+.project-links a { color: var(--gold-dark); }
+.project-links a:hover { text-decoration: underline; }
+
+/* EDUCATION & EXPERIENCE */
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.info-card { padding: 30px; }
+
+.timeline {
+  border-left: 2px solid var(--gold-light);
+  margin: 22px 0 0 8px;
+  padding-left: 23px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #f8f0dd;
+}
+
+.list { padding-left: 20px; color: var(--muted); }
+.list li { margin: 8px 0; }
+
+/* BLOG */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.blog-card { padding: 25px; }
+.blog-card p { font-size: .9rem; }
+
+/* FAQ */
+
+.faq-list { max-width: 850px; display: grid; gap: 12px; }
+
+details {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 0 20px;
+}
+
+summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 30px 18px 0;
+  font-weight: 800;
+}
+
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 12px;
+  color: var(--gold-dark);
+  font-size: 1.35rem;
+}
+details[open] summary::after { content: "−"; }
+details p { padding-bottom: 16px; margin: 0; }
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 23px;
+  align-items: start;
+}
+
+.contact-info, .contact-form { padding: 30px; }
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-method:last-child { border-bottom: 0; }
+
+.contact-method .icon-box {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.contact-method strong { display: block; font-size: .88rem; }
+.contact-method a, .contact-method span { color: var(--muted); font-size: .85rem; overflow-wrap: anywhere; }
+.contact-method a:hover { color: var(--gold-dark); }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field { display: grid; gap: 7px; margin-bottom: 14px; }
+.field.full { grid-column: 1 / -1; }
+label { font-size: .84rem; font-weight: 800; }
+
+input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  background: #fffdfa;
+  border-radius: 11px;
+  color: var(--ink);
+}
+
+textarea { min-height: 125px; resize: vertical; }
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--gold-light);
+  border-color: var(--gold);
+}
+
+.form-note { margin-top: 12px; font-size: .77rem; }
+
+.showcase {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px dashed #d6c9a8;
+  border-radius: 17px;
+  background: #ffffffa6;
+}
+
+.showcase p { margin: 8px 0 0; font-size: .88rem; }
+
+/* FOOTER */
+
+footer {
+  background: white;
+  border-top: 1px solid var(--border);
+  padding: 35px 0 20px;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.footer-links a:hover { color: var(--gold-dark); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.back-top { color: var(--gold-dark); font-weight: 800; }
+
+/* ANIMATIONS */
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .nav-links { gap: 11px; }
+  .nav-links a { font-size: .76rem; }
+  .hero-grid { gap: 25px; }
+  .skills-grid, .projects-grid, .blog-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .container { width: calc(100% - 30px); }
+  .section { padding: 68px 0; }
+
+  .navbar { min-height: 68px; flex-wrap: wrap; }
+  .menu-label { display: block; }
+
+  #menu-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 0 16px;
+  }
+
+  #menu-toggle:checked ~ .nav-links { display: flex; }
+  .nav-links a { padding: 10px 4px; font-size: .92rem; }
+
+  .hero { padding: 55px 0 65px; }
+  .hero-grid, .about-grid, .two-columns, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid { gap: 12px; }
+  .hero-visual { min-height: 390px; }
+  .float-one { left: 0; top: 30px; }
+  .float-two { right: 0; top: 160px; }
+  .float-three { left: 0; bottom: 25px; }
+
+  .profile-row { grid-template-columns: 90px 1fr; }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 540px) {
+  .skills-grid, .projects-grid, .blog-grid, .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card, .profile-card, .skill-card, .project-content,
+  .info-card, .blog-card, .contact-info, .contact-form {
+    padding: 22px;
+  }
+
+  .hero-visual { min-height: 350px; }
+  .portrait-frame { width: 275px; max-width: 78%; }
+  .float-card { padding: 9px 11px; font-size: .7rem; }
+  .float-icon { width: 29px; height: 29px; }
+
+  .stats { grid-template-columns: 1fr; gap: 8px; }
+  .stat { display: flex; justify-content: space-between; align-items: center; }
+  .stat span { font-size: .75rem; }
+
+  .footer-top { flex-direction: column; align-items: flex-start; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#home" class="logo">ABDULLAH<span>.DEV</span></a>
+
+    <label for="menu-toggle" class="menu-label">☰ Menu</label>
+    <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation">
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#blog">Blog</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+      <span class="eyebrow">Software Engineer &amp; SQA Professional</span>
+
+      <h1>Hi, I'm Hafiz Muhammad <span class="accent">Abdullah</span></h1>
+
+      <div class="role">
+        Software Quality Assurance Engineer
+        <span class="accent">|</span> Frontend Developer
+      </div>
+
+      <p>
+        I’m a Software Engineer, Frontend Developer, and SQA Professional
+        passionate about building responsive web applications and delivering
+        high-quality software. I enjoy creating user-friendly interfaces,
+        testing applications, identifying bugs, and improving software reliability.
+      </p>
+
+      <p class="location">⌖ Faisalabad, Pakistan</p>
+
+      <div class="button-row">
+        <a href="#projects" class="btn btn-primary">Explore My Projects ↗</a>
+        <a href="#contact" class="btn btn-light">Let's Connect</a>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/hafiz111-ux" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/hafiz-muhammad-abdullah-250b52332" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="mailto:info.hafiz111@gmail.com">Email ↗</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>Software QA</strong><span>Quality-focused mindset</span></div>
+        <div class="stat"><strong>Frontend</strong><span>Responsive interfaces</span></div>
+        <div class="stat"><strong>Fresher</strong><span>Learning &amp; building</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="portrait-frame">
+        <!-- Replace this placeholder with your own photo later. -->
+        <div class="portrait-placeholder">
+          <div class="avatar">HA</div>
+          <strong>Your Profile Photo</strong>
+          <small>Add your real picture here</small>
+        </div>
+      </div>
+
+      <div class="float-card float-one"><span class="float-icon">✓</span> Software Quality</div>
+      <div class="float-card float-two"><span class="float-icon">⌘</span> Frontend UI</div>
+      <div class="float-card float-three"><span class="float-icon">⌕</span> Testing &amp; Bugs</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">A little about me</span>
+      <h2>About <span class="accent">Me</span></h2>
+      <p>Curious by nature, quality-focused by mindset, and motivated to keep learning through practical projects.</p>
+    </div>
+
+    <div class="about-grid">
+      <article class="card about-card">
+        <h3>Building Better Digital Experiences</h3>
+
+        <p>
+          I’m a Software Engineer, Frontend Developer, and SQA Professional
+          passionate about building responsive web applications and delivering
+          high-quality software. I specialize in creating user-friendly
+          interfaces, testing applications, identifying bugs, and improving
+          software reliability.
+        </p>
+
+        <p>
+          My goal is to combine creativity, technical expertise, and quality
+          assurance to develop digital solutions that make a difference.
+          I believe great software should not only look good, but also work
+          reliably and provide a smooth experience for its users.
+        </p>
+
+        <p>
+          I am continuously strengthening my skills through education and
+          project work, with a focus on frontend development, software testing
+          fundamentals, and the software development lifecycle.
+        </p>
+      </article>
+
+      <aside class="card profile-card">
+        <h3>✦ Quick Profile</h3>
+
+        <dl class="profile-list">
+          <div class="profile-row"><dt>Name</dt><dd>Hafiz Muhammad Abdullah</dd></div>
+          <div class="profile-row"><dt>Role</dt><dd>Software Engineer / SQA / Frontend Developer</dd></div>
+          <div class="profile-row"><dt>Education</dt><dd>BS Software Engineering</dd></div>
+          <div class="profile-row"><dt>Semester</dt><dd>5th Semester</dd></div>
+          <div class="profile-row"><dt>Institution</dt><dd>Government College University Faisalabad</dd></div>
+          <div class="profile-row"><dt>Location</dt><dd>Faisalabad, Pakistan</dd></div>
+          <div class="profile-row"><dt>Experience</dt><dd><span class="pill">Fresher</span></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section soft" id="skills">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">What I work on</span>
+      <h2>Skills &amp; <span class="accent">Expertise</span></h2>
+      <p>My areas of interest and learning, organized around software quality, frontend experiences, and engineering fundamentals.</p>
+    </div>
+
+    <div class="skills-grid">
+      <article class="card skill-card">
+        <div class="icon-box">✓</div>
+        <h3>Software Quality Assurance</h3>
+        <p>Focused on software quality, careful testing, and identifying issues that may affect users.</p>
+        <div class="tags">
+          <span class="tag">SQA Fundamentals</span>
+          <span class="tag">Software Testing</span>
+          <span class="tag">Test Cases</span>
+          <span class="tag">Bug Reporting</span>
+          <span class="tag">SDLC</span>
+          <span class="tag">STLC</span>
+        </div>
+        <p class="note">Areas of learning and practice</p>
+      </article>
+
+      <article class="card skill-card">
+        <div class="icon-box">⌘</div>
+        <h3>Frontend Development</h3>
+        <p>Interested in clean layouts and accessible, responsive user interfaces.</p>
+        <div class="tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">Responsive Design</span>
+          <span class="tag">UI Usability</span>
+          <span class="tag">Web Interfaces</span>
+        </div>
+        <p class="note">This portfolio demonstrates HTML and CSS styling.</p>
+      </article>
+
+      <article class="card skill-card">
+        <div class="icon-box">◇</div>
+        <h3>Software Engineering</h3>
+        <p>Building a strong foundation through coursework, project-based learning, and continuous improvement.</p>
+        <div class="tags">
+          <span class="tag">Engineering Concepts</span>
+          <span class="tag">Project Learning</span>
+          <span class="tag">Development Lifecycle</span>
+          <span class="tag">Problem Solving</span>
+        </div>
+        <p class="note">Continuously developing practical knowledge</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Selected work</span>
+      <h2>Featured <span class="accent">Projects</span></h2>
+      <p>A selection of development and learning projects. Add real repository links and screenshots when available.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="card project-card">
+        <div class="project-preview">
+          <div class="browser-bar"><i></i><i></i><i></i></div>
+          <div class="preview-content"><div><span>✈</span>VOYARA<br><small>Travel Planner Preview</small></div></div>
+        </div>
+        <div class="project-content">
+          <span class="category">Travel Planning Web Application</span>
+          <h3>VOYARA Travel Planner</h3>
+          <p>A travel-planning web application project designed to help users explore destinations and organize travel-related information.</p>
+          <div class="tags"><span class="tag">Web App</span><span class="tag">Travel Planning</span><span class="tag">Project Work</span></div>
+          <div class="project-links">
+            <a href="https://github.com/hafiz111-ux" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-preview">
+          <div class="browser-bar"><i></i><i></i><i></i></div>
+          <div class="preview-content"><div><span>⌨</span>Typing Test<br><small>Practice Tool Preview</small></div></div>
+        </div>
+        <div class="project-content">
+          <span class="category">Practice / Productivity Tool</span>
+          <h3>Typing Test</h3>
+          <p>A typing practice project intended to help users practice typing and review their performance.</p>
+          <div class="tags"><span class="tag">Practice Tool</span><span class="tag">Typing</span><span class="tag">Learning Project</span></div>
+          <div class="project-links"><a href="https://github.com/hafiz111-ux" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a></div>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-preview">
+          <div class="browser-bar"><i></i><i></i><i></i></div>
+          <div class="preview-content"><div><span>◎</span>SDLC &amp; STLC<br><small>Learning Project Preview</small></div></div>
+        </div>
+        <div class="project-content">
+          <span class="category">Software Engineering / QA</span>
+          <h3>SDLC and STLC</h3>
+          <p>An educational project exploring the Software Development Life Cycle and Software Testing Life Cycle.</p>
+          <div class="tags"><span class="tag">SDLC</span><span class="tag">STLC</span><span class="tag">Quality Assurance</span></div>
+          <div class="project-links"><a href="https://github.com/hafiz111-ux" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section soft" id="education">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Academic journey</span>
+      <h2><span class="accent">Education</span></h2>
+      <p>My academic foundation in software engineering.</p>
+    </div>
+
+    <article class="card info-card">
+      <span class="pill">Currently studying</span>
+      <div class="timeline">
+        <h3>BS Software Engineering</h3>
+        <p><strong>Government College University Faisalabad</strong></p>
+        <p>Current status: 5th Semester</p>
+        <p>Faisalabad, Pakistan</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Where I am today</span>
+      <h2>Professional <span class="accent">Experience</span></h2>
+      <p>An honest snapshot of my current career stage and the direction I am working toward.</p>
+    </div>
+
+    <div class="two-columns">
+      <article class="card info-card">
+        <span class="pill">Entry level · Fresher</span>
+        <h3 style="margin-top:18px">Learning, Building, Improving</h3>
+        <p>I am at the beginning of my professional journey and focused on building practical software engineering knowledge through education and projects.</p>
+        <ul class="list">
+          <li>Professional interests: SQA and frontend development</li>
+          <li>Focus: learning, project work, and practical skills</li>
+          <li>Career goal: contribute to responsive applications and dependable software quality</li>
+        </ul>
+      </article>
+
+      <article class="card info-card">
+        <div class="icon-box">✦</div>
+        <h3>What I Bring to a Team</h3>
+        <p>I value careful observation, willingness to learn, thoughtful implementation, and a quality-first approach to software.</p>
+        <div class="tags">
+          <span class="tag">Attention to Detail</span>
+          <span class="tag">Growth Mindset</span>
+          <span class="tag">Quality Focus</span>
+          <span class="tag">Team Learning</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section soft" id="blog">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">My learning journey</span>
+      <h2>Insights &amp; <span class="accent">Learning</span></h2>
+      <p>Topics I am exploring and may develop into articles in the future.</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="card blog-card">
+        <div class="icon-box">01</div>
+        <span class="category">Software Engineering</span>
+        <h3>Understanding the SDLC</h3>
+        <p>A beginner-friendly look at the stages of planning, building, testing, deploying, and maintaining software.</p>
+        <span class="pill">Planned learning topic</span>
+      </article>
+
+      <article class="card blog-card">
+        <div class="icon-box">02</div>
+        <span class="category">Software Testing</span>
+        <h3>Understanding the STLC</h3>
+        <p>Exploring how software testing is planned and carried out to help assess product quality.</p>
+        <span class="pill">Planned learning topic</span>
+      </article>
+
+      <article class="card blog-card">
+        <div class="icon-box">03</div>
+        <span class="category">Quality Assurance</span>
+        <h3>Why SQA Matters</h3>
+        <p>Learning how structured testing and clear bug reports can support more reliable web experiences.</p>
+        <span class="pill">Planned learning topic</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Helpful information</span>
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary>Who is Hafiz Muhammad Abdullah?</summary>
+        <p>I am a BS Software Engineering student at Government College University Faisalabad, interested in software quality assurance and frontend development.</p>
+      </details>
+
+      <details>
+        <summary>What is my professional focus?</summary>
+        <p>My focus is on creating user-friendly, responsive web interfaces and learning software testing practices that help improve quality and reliability.</p>
+      </details>
+
+      <details>
+        <summary>What projects have I worked on?</summary>
+        <p>My portfolio highlights VOYARA Travel Planner, Typing Test, and an educational SDLC and STLC project.</p>
+      </details>
+
+      <details>
+        <summary>What is my current education?</summary>
+        <p>I am studying BS Software Engineering and am currently in the 5th semester at Government College University Faisalabad.</p>
+      </details>
+
+      <details>
+        <summary>Do I have professional work experience?</summary>
+        <p>I am a fresher and am focused on learning, building projects, and strengthening practical software engineering knowledge.</p>
+      </details>
+
+      <details>
+        <summary>How can someone contact me?</summary>
+        <p>You can reach me through email, phone, GitHub, or LinkedIn using the contact details below.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section soft" id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Start a conversation</span>
+      <h2>Let's <span class="accent">Connect</span></h2>
+      <p>Have an opportunity, collaboration idea, or feedback? Feel free to reach out.</p>
+    </div>
+
+    <div class="contact-grid">
+      <aside class="card contact-info">
+        <h3>Contact Details</h3>
+
+        <address style="font-style:normal">
+          <div class="contact-method">
+            <div class="icon-box">✉</div>
+            <div><strong>Email</strong><a href="mailto:info.hafiz111@gmail.com">info.hafiz111@gmail.com</a></div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon-box">☎</div>
+            <div><strong>Phone</strong><a href="tel:+923126746161">+92 312 6746161</a></div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon-box">⌖</div>
+            <div><strong>Location</strong><span>Faisalabad, Pakistan</span></div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon-box">⌘</div>
+            <div><strong>GitHub</strong><a href="https://github.com/hafiz111-ux" target="_blank" rel="noopener noreferrer">github.com/hafiz111-ux</a></div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon-box">in</div>
+            <div><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/hafiz-muhammad-abdullah-250b52332" target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a></div>
+          </div>
+        </address>
+      </aside>
+
+      <div class="card contact-form">
+        <h3>Send a Message</h3>
+
+        <!-- HTML-only form: configure a backend or form service for online submissions. -->
+        <form action="mailto:info.hafiz111@gmail.com" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="field full">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="What would you like to discuss?" required>
+            </div>
+
+            <div class="field full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Prepare Email ↗</button>
+          <p class="form-note">This form attempts to open your email application. For reliable online submissions, connect a backend or form service.</p>
+        </form>
+      </div>
+    </div>
+
+    <aside class="showcase">
+      <strong>Built with HTML5 &amp; CSS3</strong>
+      <p>This portfolio uses semantic elements such as header, nav, main, section, article, aside, address, details, summary, form, and footer where appropriate.</p>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#home" class="logo">ABDULLAH<span>.DEV</span></a>
+        <p style="margin:8px 0 0;font-size:.88rem">Building thoughtful interfaces. Learning quality-first software.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-links">
+        <a href="https://github.com/hafiz111-ux" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/hafiz-muhammad-abdullah-250b52332" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="mailto:info.hafiz111@gmail.com">Email ↗</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <time datetime="2026">2026</time> Hafiz Muhammad Abdullah. All rights reserved.</span>
+      <a class="back-top" href="#home">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
